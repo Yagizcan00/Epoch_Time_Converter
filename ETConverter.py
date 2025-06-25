@@ -14,7 +14,7 @@ df['tarih'] = pd.to_datetime(df[epoch_col], unit='ms', errors='coerce')
 bugun = pd.Timestamp.now()
 
 # 2 gün önceki tarih
-iki_gun_once = bugun - timedelta(days=2)
+iki_gun_once = bugun - timedelta(days=1)
 
 # Filtre koşulu: tarih boş olanlar veya 2 günden eski olanlar
 filtreli_df = df[(df['tarih'].isna()) | (df['tarih'] < iki_gun_once)].copy()
