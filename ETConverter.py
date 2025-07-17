@@ -2,7 +2,7 @@ import pandas as pd # type: ignore
 from datetime import datetime, timedelta
 
 # Excel dosyasını oku
-df = pd.read_excel('veriler.xlsx')
+df = pd.read_excel('ipAddress_list_epoch.xlsx')
 
 # Epoch sütunu adı
 epoch_col = 'epoch_time'
@@ -23,6 +23,6 @@ filtreli_df = df[(df['tarih'].isna()) | (df['tarih'] < iki_gun_once)].copy()
 filtreli_df['satir_numarasi'] = filtreli_df.index + 2
 
 # Sonuçları yeni bir Excel dosyasına yaz
-filtreli_df.to_excel('veriler_donusturulmus.xlsx', index=False)
+filtreli_df.to_excel('ipAddress_list_epoch_donusturulmus.xlsx', index=False)
 
-print("Filtrelenmiş veriler 'veriler_donusturulmus.xlsx' dosyasına yazıldı.")
+print("Filtrelenmiş veriler oluşturulan excel dosyasına yazıldı.")
